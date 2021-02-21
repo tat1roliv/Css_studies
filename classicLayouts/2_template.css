@@ -1,0 +1,96 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body,
+ul,
+li,
+p{
+    font-family: 'Gill Sans', 'Gill Sans MT';    
+    font-size: 1.2rem;
+    list-style: none;   
+}   
+body{
+    margin-bottom: 100px;
+} 
+p{
+    font-size: 1rem;
+}
+a{
+    text-decoration: none; 
+    color: white;
+}
+h1{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+img{
+   max-width: 100%;
+   display: block;
+}
+.logo{
+    color:  rgb(247, 156, 82);;
+}
+
+.header {
+    background-color: #1d1d20;  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.menu {
+    display: flex;
+}
+
+.menu li {
+    margin-left: 10px;
+}
+.menu li a{
+    display: block;
+    padding: 10px;
+    color: white;
+}
+.menu li a:hover{
+    color: rgb(139, 204, 139);
+}
+
+/*css grid1*/
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 800px;
+    padding: 10px;
+    margin: 0 auto;
+    grid-gap: 20px;
+}
+.grid > div:nth-child(n + 4){
+    /*background-color: red;*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    align-items: center;
+
+}
+.grid > div.anuncio{
+    grid-column: 1;
+    grid-row: 2 / 5;
+    display: block;
+}
+@media (max-width: 600px){
+   .grid {
+       grid-template-columns: 1fr 1fr;
+   } 
+   .grid > div:nth-child(n + 4){
+       display: block;
+   }
+   .grid > div.anuncio {
+       grid-column: auto;
+       grid-row: auto;
+       order: -1;
+   }
+}
